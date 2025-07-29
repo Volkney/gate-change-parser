@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Flight Log Parser</h1>
-        </div>
-        
-        <div class="columns">
-            <div class="input-column">
-                <div class="column-title">Input</div>
-                <textarea id="inputText" placeholder="Paste your flight log data here..."></textarea>
-                <button class="parse-btn" onclick="parseFlightData()">Parse</button>
-            </div>
+    <h2>Flight Gate Change Parser</h2>
 
-            <div class="output-column">
-                <div class="column-title">Output</div>
-                <div class="output" id="output">Parsed flight data will appear here...</div>
-            </div>
-        </div>
+    <div class="controls">
+      <button onclick="parseFlights()">Parse</button>
+      <input type="text" id="airportFilter" placeholder="From airport (e.g., AUS)" />
+      <button onclick="parseFlights(true)">Filter</button>
+    </div>
+  
+    <div class="container">
+      <div class="section">
+        <h3>Input</h3>
+        <textarea id="input" placeholder="Paste raw gate change logs here..."></textarea>
+      </div>
+      <div class="section">
+        <h3>Output</h3>
+        <pre id="output"></pre>
+      </div>
     </div>
 </body>
 <script src="script.js"></script>
