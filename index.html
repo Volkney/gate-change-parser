@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flight Parser</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <h2>Flight Gate Change Parser</h2>
 
-    <div class="controls">
-      <button onclick="parseFlights()">Parse</button>
-      <input type="text" id="airportFilter" placeholder="From airport (e.g., AUS)" />
-      <button onclick="parseFlights(true)">Filter</button>
-    </div>
+   
   
     <div class="container">
       <div class="section">
         <h3>Input</h3>
         <textarea id="input" placeholder="Paste raw gate change logs here..."></textarea>
+        <div class="controls">
+            <button onclick="parseFlights()">Parse</button>
+            
+          </div>
       </div>
       <div class="section">
         <h3>Output</h3>
         <pre id="output"></pre>
+        <div class="filter-group">
+            <label for="airportFilter">Filter by origin:</label>
+            <select id="airportFilter" multiple></select>
+            <button onclick="parseFlights(true)">Filter</button>
+          </div>
       </div>
+              
+     
     </div>
 </body>
 <script src="script.js"></script>
