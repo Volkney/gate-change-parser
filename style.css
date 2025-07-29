@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Monaco', 'Consolas', monospace;
+    background: #f8f4f0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.header {
+    background: #d4b5c9;
+    color: #2d3436;
+    padding: 25px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2em;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 600px;
+}
+
+.input-column, .output-column {
+    padding: 25px;
+}
+
+.input-column {
+    border-right: 1px solid #e9ecef;
+}
+
+.column-title {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #2d3436;
+    font-weight: 500;
+}
+
+textarea {
+    width: 100%;
+    height: calc(100% - 80px);
+    padding: 15px;
+    border: 2px solid #d1c4e9;
+    border-radius: 8px;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 13px;
+    line-height: 1.4;
+    resize: none;
+    background: #fefefe;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #b39ddb;
+}
+
+.parse-btn {
+    background: #c8a2c8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #2d3436;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.parse-btn:hover {
+    background: #b08db0;
+}
+
+.output {
+    width: 100%;
+    height: calc(100% - 40px);
+    background: #fff8f5;
+    border: 2px solid #ffccbc;
+    border-radius: 8px;
+    padding: 15px;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 13px;
+    line-height: 1.4;
+    overflow-y: auto;
+}
+
+.flight-entry {
+    background: #ffe0b8;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 6px;
+    color: #2d3436;
+    border-left: 3px solid #ffab91;
+}
+
+@media (max-width: 768px) {
+    .columns {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .input-column {
+        border-right: none;
+        border-bottom: 1px solid #e9ecef;
+    }
+    
+    textarea, .output {
+        height: 300px;
+    }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Flight Log Parser</h1>
+        </div>
+        
+        <div class="columns">
+            <div class="input-column">
+                <div class="column-title">Input</div>
+                <textarea id="inputText" placeholder="Paste your flight log data here..."></textarea>
+                <button class="parse-btn" onclick="parseFlightData()">Parse</button>
+            </div>
+
+            <div class="output-column">
+                <div class="column-title">Output</div>
+                <div class="output" id="output">Parsed flight data will appear here...</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
