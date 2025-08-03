@@ -10,34 +10,41 @@
 
     <h2>Flight Gate Change Parser</h2>
 
-   
-  
     <div class="container">
       <section class="section">
         <h3>Input</h3>
         <textarea id="input" placeholder="Paste raw gate change logs here..."></textarea>
         <div class="controls">
             <button onclick="parseFlights()">Parse</button>
-            
-          </div>
-      </section>
-      <section class="section">
-        <h3>Output</h3>
-        <div id="output" class="output-container"></div>
-        <div class="filter-group">
-            <div>
-                <label for="airportFilter">Filter by origin:</label>
-                <select id="airportFilter" multiple></select>
-            </div>
-
-            <div class="parse-button">
-                <button onclick="parseFlights(true)">Filter</button>
-            </div>
         </div>
       </section>
-              
-     
+
+      <section class="section">
+        <h3>Output</h3>
+        <div class="output-wrapper">
+          <pre id="output"></pre>
+          <button class="copy-all-btn" onclick="copyAllOutput()">
+            <span class="icon-label">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.8125 10.1875V4.17188L10.9531 2.3125H6.6875V10.1875H12.8125ZM14.125 3.625V10.1875V11.5H12.8125H6.6875H5.375V10.1875V2.3125V1H6.6875H11.5L14.125 3.625ZM3.1875 4.5H4.5V5.8125H3.1875V13.6875H9.3125V12.375H10.625V13.6875V15H9.3125H3.1875H1.875V13.6875V5.8125V4.5H3.1875Z" fill="#1570C7"/>
+              </svg>
+        
+            </span>
+          </button>          
+        </div>
+        <div class="filter-group">
+          <div>
+            <label for="airportFilter">Filter by origin:</label>
+            <select id="airportFilter" multiple></select>
+          </div>
+          <div class="parse-button">
+            <button onclick="parseFlights(true)">Filter</button>
+          </div>
+        </div>
+      </section>
+      
     </div>
+
 </body>
 <script src="script.js"></script>
 </html>

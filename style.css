@@ -2,55 +2,55 @@ body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
     padding: 2rem;
-  }
+}
 
-  .container {
+.container {
     display: flex;
     gap: 2rem;
-  }
+}
 
-  .section {
+.section {
     flex: 1;
     display: flex;
     flex-direction: column;
-  }
+}
 
-  textarea, pre {
+textarea, pre {
     width: 100%;
     font-family: monospace;
     font-size: 14px;
     padding: 1rem;
     box-sizing: border-box;
-  }
+}
 
-  textarea {
+textarea {
     height: 400px;
     resize: vertical;
-  }
+}
 
-  pre {
+pre {
     height: 400px;
     background: #fff;
     border: 1px solid #ccc;
     white-space: pre;
     overflow: auto;
-  }
+}
 
-  .controls {
+.controls {
     margin: 1rem 0;
     display: flex;
     align-items: flex-start;
     gap: 1rem;
     flex-wrap: wrap;
-  }
+}
 
-  button {
+button {
     padding: 0.5rem 1rem;
     font-size: 14px;
     cursor: pointer;
-  }
+}
 
-  select {
+select {
     font-size: 13px;
     padding: 0.4rem;
     max-height: 130px;
@@ -58,63 +58,62 @@ body {
     overflow-y: auto;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
+}
 
-  h2, h3 {
+h2, h3 {
     margin-bottom: 0.5rem;
-  }
+}
 
-  label {
+label {
     font-size: 13px;
     margin-bottom: 0.2rem;
     display: block;
-  }
+}
 
-  .filter-group{
+.filter-group {
     display: flex;
     gap: 1rem;
+}
+
+.parse-button {
+    align-self: center;
+}
+
+
+.output-wrapper {
+    position: relative;
   }
-
-  .parse-button{
-    align-self:center
-  }
-
-
-  .output-container {
+  
+  pre#output {
+    height: 400px;
     background: #fff;
     border: 1px solid #ccc;
-    height: 400px;
-    overflow-y: auto;
+    white-space: pre;
+    overflow: auto;
     font-family: monospace;
     font-size: 14px;
     padding: 1rem;
-    white-space: pre;
+    margin: 0;
+    box-sizing: border-box;
   }
   
-  .output-line {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.25rem;
-  }
-  
-  .output-text {
-    flex: 1;
-    word-break: break-word;
-  }
-  
-  .copy-btn {
-    padding: 0.2rem 0.6rem;
-    font-size: 12px;
-    background-color: #007bff;
-    color: white;
+  .copy-all-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 0.3rem 0.6rem;
     border: none;
-    border-radius: 3px;
     cursor: pointer;
+    z-index: 1;
+  }
+
+  .copy-all-btn .icon-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
   }
   
-  .copy-btn:hover {
-    background-color: #0056b3;
+  .copy-all-btn svg {
+    display: inline-block;
+    vertical-align: middle;
   }
-  
