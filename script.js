@@ -1,3 +1,5 @@
+
+
 const CITIES = [
     "AUS", "ABQ", "ALB", "AMA", "ATL", "AUA", "BDL", "BHM", "BNA", "BOI", "BOS", "BUF", "BUR", "BWI", "BZE", "BZN",
     "CHS", "CLE", "CLT", "CMH", "COS", "CRP", "CUN", "CVG", "DAL", "DCA", "DEN", "DSM", "DTW", "ECP", "ELP", "EUG",
@@ -52,5 +54,30 @@ const CITIES = [
       }
     }
 
-    document.getElementById('output').textContent = results.join('\n');
+    const outputDiv = document.getElementById('output');
+    outputDiv.innerHTML = '';
+
+    results.forEach(line => {
+    const lineDiv = document.createElement('div');
+    lineDiv.className = 'output-line';
+
+    const textSpan = document.createElement('span');
+    textSpan.className = 'output-text';
+    textSpan.textContent = line;
+
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'copy-btn';
+    copyBtn.textContent = 'Copy';
+    copyBtn.onclick = () => {
+        navigator.clipboard.writeText(line).then(() => {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => (copyBtn.textContent = 'Copy'), 1000);
+        });
+    };
+
+    lineDiv.appendChild(textSpan);
+    lineDiv.appendChild(copyBtn);
+    outputDiv.appendChild(lineDiv);
+});
+
   }

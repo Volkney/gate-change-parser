@@ -13,23 +13,28 @@
    
   
     <div class="container">
-      <div class="section">
+      <section class="section">
         <h3>Input</h3>
         <textarea id="input" placeholder="Paste raw gate change logs here..."></textarea>
         <div class="controls">
             <button onclick="parseFlights()">Parse</button>
             
           </div>
-      </div>
-      <div class="section">
+      </section>
+      <section class="section">
         <h3>Output</h3>
-        <pre id="output"></pre>
+        <div id="output" class="output-container"></div>
         <div class="filter-group">
-            <label for="airportFilter">Filter by origin:</label>
-            <select id="airportFilter" multiple></select>
-            <button onclick="parseFlights(true)">Filter</button>
-          </div>
-      </div>
+            <div>
+                <label for="airportFilter">Filter by origin:</label>
+                <select id="airportFilter" multiple></select>
+            </div>
+
+            <div class="parse-button">
+                <button onclick="parseFlights(true)">Filter</button>
+            </div>
+        </div>
+      </section>
               
      
     </div>
