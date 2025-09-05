@@ -32,12 +32,13 @@ function parseFlights(applyFilter = false) {
   const lines = input.split('\n');
   const results = [];
 
-  const flightRegex = /FLT (\d+)\s+FROM\s+(\w{3}) > (\w{3})\s+(\w+)\s+(\S+) > (\S+)/;
+  // Updated regex to capture ETD if present
+  const flightRegex = /FLT (\d+)\s+FROM\s+(\w{3}) > (\w{3})\s+(\w+)\s+(\S+) > (\S+)(?:.*?ETD (\d{1,2}:\d{2}))?/;
 
   for (const line of lines) {
     const match = flightRegex.exec(line);
     if (match) {
-      const [, flightNum, from, to, tail, gateFrom, gateTo] = match;
+      const [, flightNum, from, to, tail, gateFrom, gateTo, etd] = match;
 
       if (applyFilter && selectedAirports.length > 0 && !selectedAirports.includes(from)) {
         continue;
@@ -46,14 +47,16 @@ function parseFlights(applyFilter = false) {
       const paddedFlight = pad(`FLT ${flightNum}`, 9);
       const paddedTail = pad(`[${tail}]`, 11);
       const paddedRoute = pad(`${from} -> ${to}`, 13);
-      const paddedGates = `${gateFrom} -> ${gateTo}`;
+      const paddedGates = pad(`${gateFrom} -> ${gateTo}`, 11);
+      const etdPart = etd ? `ETD ${etd}` : "";
 
-      results.push(`${paddedFlight}${paddedTail}${paddedRoute}${paddedGates}`);
+      results.push(`${paddedFlight}${paddedTail}${paddedRoute}${paddedGates}${etdPart}`);
     }
   }
 
   document.getElementById('output').textContent = results.join('\n');
 }
+
 
 
 function copyAllOutput() {
