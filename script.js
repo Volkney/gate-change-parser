@@ -45,8 +45,8 @@ function parseFlights(applyFilter = false) {
       }
 
       const paddedFlight = pad(`FLT ${flightNum}`, 9);
-      const paddedTail = pad(`[${tail}]`, 11);
-      const paddedRoute = pad(`${from} -> ${to}`, 13);
+      const paddedTail = pad(`[${tail}]`, 9);
+      const paddedRoute = pad(`${from} -> ${to}`, 9);
       const paddedGates = pad(`${gateFrom} -> ${gateTo}`, 11);
       const etdPart = etd ? `ETD ${etd}` : "";
 
@@ -60,18 +60,16 @@ function parseFlights(applyFilter = false) {
 
 
 function copyAllOutput() {
-    const lines = Array.from(document.querySelectorAll('.output-text')).map(el => el.textContent);
-    const fullText = lines.join('\n');
-    navigator.clipboard.writeText(fullText).then(() => {
-      const btn = document.querySelector('.copy-all-btn');
-      const labelSpan = btn.querySelector('.icon-label');
-  
-      const original = labelSpan.innerHTML;
-      labelSpan.innerHTML = '✔️';
-  
-      setTimeout(() => {
-        labelSpan.innerHTML = original;
-      }, 1000);
-    });
-  }
-  
+  const text = document.getElementById('output').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-all-btn');
+    const labelSpan = btn.querySelector('.icon-label');
+
+    const original = labelSpan.innerHTML;
+    labelSpan.innerHTML = '✔️';
+
+    setTimeout(() => {
+      labelSpan.innerHTML = original;
+    }, 1000);
+  });
+}
