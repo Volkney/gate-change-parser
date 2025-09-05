@@ -45,8 +45,8 @@ function parseFlights(applyFilter = false) {
       }
 
       const paddedFlight = pad(`FLT ${flightNum}`, 9);
-      const paddedTail = pad(`[${tail}]`, 9);
-      const paddedRoute = pad(`${from} -> ${to}`, 9);
+      const paddedTail = pad(`[${tail}]`, 10);
+      const paddedRoute = pad(`${from} -> ${to}`, 11);
       const paddedGates = pad(`${gateFrom} -> ${gateTo}`, 11);
       const etdPart = etd ? `ETD ${etd}` : "";
 
